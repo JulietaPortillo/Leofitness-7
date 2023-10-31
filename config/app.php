@@ -145,6 +145,22 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+         /*
+         * Packages service providers
+         */
+
+         Laracasts\Flash\FlashServiceProvider::class,
+         Collective\Html\HtmlServiceProvider::class,
+         Intervention\Image\ImageServiceProvider::class,
+         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+         Sofa\Eloquence\ServiceProvider::class,
+         Barryvdh\Debugbar\ServiceProvider::class,
+         Zizaco\Entrust\EntrustServiceProvider::class,
+         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+
     ],
 
     /*
@@ -193,6 +209,16 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+
+        'Flash' => Laracasts\Flash\Flash::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Entrust' => Zizaco\Entrust\EntrustFacade::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
     ],
 
 ];
