@@ -22,12 +22,12 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Ingrese detalles del plan</div>
+                            <div class="panel-head font-size-20">Ingresar detalles del servicio</div>
                         </div>
 
-                        {!! Form::Open(['url' => 'plans','id'=>'plansform']) !!}
+                        {!! Form::Open(['url' => 'plans/services','id'=>'servicesform']) !!}
 
-                        @include('plans.form',['submitButtonText' => 'Agregar plan'])
+                        @include('services.form',['submitButtonText' => 'Agregar'])
 
                         {!! Form::Close() !!}
 
@@ -40,5 +40,5 @@
 
 @stop
 @section('footer_scripts')
-    <script src="{{ URL::asset('assets/js/plan.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('assets/js/service.js') }}" type="text/javascript"></script>
 @stop

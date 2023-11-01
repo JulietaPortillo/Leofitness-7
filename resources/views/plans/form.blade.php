@@ -50,7 +50,7 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                {!! Form::label('amount','Cantidad (sin cargos adicionales)') !!}
+                {!! Form::label('amount','Costo del plan (sin cargos adicionales)') !!}
                 <div class="input-group">
                     <div class="input-group-addon"><i class="fa fa-money"></i></div>
                     {!! Form::text('amount',null,['class'=>'form-control', 'id' => 'amount']) !!}
