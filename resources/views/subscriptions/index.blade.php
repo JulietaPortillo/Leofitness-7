@@ -58,7 +58,7 @@
 
                                         <div class="col-sm-2">
                                             {!! Form::label('sort_direction','Orden') !!}
-                                            {!! Form::select('sort_direction',array('desc' => 'Decendiendo','asc' => 'Ascendiendo'),old('sort_direction'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_direction']) !!}</span>
+                                            {!! Form::select('sort_direction',array('desc' => 'Decendente','asc' => 'Ascendiendo'),old('sort_direction'),['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'sort_direction']) !!}</span>
                                         </div>
 
                                         <div class="col-xs-2">
