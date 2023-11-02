@@ -30,7 +30,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             {!! Form::label('mode','Metodo de pago') !!}
-                            {!! Form::select('mode',array('1' => 'Effectivo', '0' => 'Transferencia'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
+                            {!! Form::select('mode',array('1' => 'Efectivo', '0' => 'Transferencia'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
                         </div>
                     </div>
                 </div> <!-- /Row -->

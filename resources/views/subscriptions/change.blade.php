@@ -9,7 +9,7 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the subscription</div>
+                            <div class="panel-head font-size-20">Ingrese los detalles de la suscripcion</div>
                         </div>
 
 
@@ -18,7 +18,7 @@
                             <div class="row">
                                 <div class="col-sm-3">
 
-                                    {!! Form::label('member_id','Member Code') !!}
+                                    {!! Form::label('member_id','Codigo de miembro') !!}
 
                                 </div>
 
@@ -27,11 +27,11 @@
                                 </div>
 
                                 <div class="col-sm-3">
-                                    {!! Form::label('start_date_0','Start Date') !!}
+                                    {!! Form::label('start_date_0','Fecha de inicio') !!}
                                 </div>
 
                                 <div class="col-sm-3">
-                                    {!! Form::label('end_date_0','End Date') !!}
+                                    {!! Form::label('end_date_0','Fecha de caducacion') !!}
                                 </div>
 
 
@@ -88,23 +88,23 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the invoice</div>
+                            <div class="panel-head font-size-20">Ingrese detalles del recibo</div>
                         </div>
 
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('invoice_number','Invoice Number') !!}
+                                        {!! Form::label('invoice_number','Numero del recibo') !!}
                                         {!! Form::text('invoice_number',$subscription->invoice->invoice_number,['class'=>'form-control', 'id' => 'invoice_number','readonly']) !!}
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('subscription_amount','Gym subscription fee') !!}
+                                        {!! Form::label('subscription_amount','Cargo de suscripcion') !!}
                                         <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                                            <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                             {!! Form::text('subscription_amount',$subscription->invoice->total,['class'=>'form-control', 'id' => 'subscription_amount','readonly' => 'readonly']) !!}
                                         </div>
                                     </div>
@@ -112,9 +112,9 @@
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('taxes_amount',sprintf('Tax @ %s %%',Utilities::getSetting('taxes'))) !!}
+                                        {!! Form::label('taxes_amount',sprintf('Cargos adicionales @ %s %%',Utilities::getSetting('taxes'))) !!}
                                         <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                                            <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                             {!! Form::text('taxes_amount',$subscription->invoice->tax,['class'=>'form-control', 'id' => 'taxes_amount','readonly' => 'readonly']) !!}
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_percent','Discount') !!}
+                                        {!! Form::label('discount_percent','Descuento') !!}
                                         <?php
                                         $discounts = explode(",", str_replace(" ", "", (Utilities::getSetting('discounts'))));
                                         $discounts_list = array_combine($discounts, $discounts);
@@ -134,23 +134,23 @@
                                             @foreach($discounts_list as $list)
                                                 <option value="{{ $list }}" {{ ($subscription->invoice->discount_percent == $list ? "selected" : "") }}>{{ $list.'%' }}</option>
                                             @endforeach
-                                            <option value="custom" {{ ($subscription->invoice->discount_percent == "custom" ? "selected" : "") }}>Custom(Rs.)
+                                            <option value="custom" {{ ($subscription->invoice->discount_percent == "custom" ? "selected" : "") }}>Personalizado
                                             </option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_amount','Discount amount') !!}
+                                        {!! Form::label('discount_amount','Monto de descuento') !!}
                                         <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                                            <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                             {!! Form::text('discount_amount',$subscription->invoice->discount_amount,['class'=>'form-control', 'id' => 'discount_amount','readonly' => 'readonly']) !!}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('discount_note','Discount note') !!}
+                                        {!! Form::label('discount_note','Razon del descuento') !!}
                                         {!! Form::text('discount_note',$subscription->invoice->discount_note,['class'=>'form-control', 'id' => 'discount_note']) !!}
                                     </div>
                                 </div>
@@ -167,16 +167,16 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-20">Enter details of the payment</div>
+                            <div class="panel-head font-size-20">Ingrese los detalles del pago</div>
                         </div>
 
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('previous_payment','Already paid') !!}
+                                        {!! Form::label('previous_payment','Pago ya cancelado') !!}
                                         <div class="input-group">
-                                            <div class="input-group-addon"><i class="fa fa-inr"></i></div>
+                                            <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                             {!! Form::text('previous_payment',($already_paid == null ? '0' : $already_paid),['class'=>'form-control', 'id' => 'previous_payment']) !!}
                                         </div>
                                     </div>
@@ -184,7 +184,7 @@
 
                                 <div class="col-sm-2">
                                     <div class="form-group">
-                                        {!! Form::label('payment_amount','Amount Received') !!}
+                                        {!! Form::label('payment_amount','Monto recibido') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('payment_amount',null,['class'=>'form-control', 'id' => 'payment_amount', 'data-amounttotal' => '0']) !!}
@@ -194,7 +194,7 @@
 
                                 <div class="col-sm-2">
                                     <div class="form-group">
-                                        {!! Form::label('payment_amount_pending','Amount Pending') !!}
+                                        {!! Form::label('payment_amount_pending','Monto pendiente') !!}
                                         <div class="input-group">
                                             <div class="input-group-addon"><i class="fa fa-inr"></i></div>
                                             {!! Form::text('payment_amount_pending',null,['class'=>'form-control', 'id' => 'payment_amount_pending', 'readonly']) !!}
@@ -205,22 +205,22 @@
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        {!! Form::label('mode','Mode') !!}
-                                        {!! Form::select('mode',array('1' => 'Cash', '0' => 'Cheque'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
+                                        {!! Form::label('mode','Metodo de pago') !!}
+                                        {!! Form::select('mode',array('1' => 'Efectivo', '0' => 'Transferencia'),1,['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
                                     </div>
                                 </div>
 
                                 <div id="chequeDetails">
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            {!! Form::label('number','Cheque number') !!}
+                                            {!! Form::label('number','Numero de transferencia') !!}
                                             {!! Form::text('number',null,['class'=>'form-control', 'id' => 'number']) !!}
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                            {!! Form::label('date','Cheque date') !!}
+                                            {!! Form::label('date','Fecha de transferencia') !!}
                                             {!! Form::text('date',null,['class'=>'form-control datepicker-default', 'id' => 'date']) !!}
                                         </div>
                                     </div>
@@ -235,7 +235,7 @@
             <div class="row">
                 <div class="col-sm-2 pull-right">
                     <div class="form-group">
-                        {!! Form::submit('Change', ['class' => 'btn btn-primary pull-right']) !!}
+                        {!! Form::submit('Cambiar', ['class' => 'btn btn-primary pull-right']) !!}
                     </div>
                 </div>
             </div>
