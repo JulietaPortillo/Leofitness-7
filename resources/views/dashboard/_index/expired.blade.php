@@ -1,5 +1,6 @@
 <?php
     use Carbon\Carbon;
+    Carbon::setLocale('es');
 ?>
 <div class="table-responsive {!! (! $allExpired->isEmpty() ? 'panel-scroll' : '')  !!}  ">
     <table class="table table-hover">

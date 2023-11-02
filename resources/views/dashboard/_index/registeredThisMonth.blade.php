@@ -1,5 +1,6 @@
 <?php
 use Carbon\Carbon;
+Carbon::setLocale('es');
 $count = App\Member::whereMonth('created_at','=',Carbon::today()->month)->count();
 ?>
 

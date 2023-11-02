@@ -1,5 +1,6 @@
 <?php
     use Carbon\Carbon;
+    Carbon::setLocale('es');
 ?>
 <div class="table-responsive {!! (! $recents->isEmpty() ? 'panel-scroll' : '')  !!}">
     <table class="table table-hover table-condensed">

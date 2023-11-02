@@ -1,5 +1,6 @@
 <?php
     use Carbon\Carbon;
+    Carbon::setLocale('es');
    $sum = App\PaymentDetail::whereMonth('created_at','=',Carbon::today()->month)->sum('payment_amount');
 ?>
 <div class="panel bg-green-400">
