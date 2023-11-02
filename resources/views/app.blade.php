@@ -67,7 +67,7 @@
                 <div class="thumb">
                 </div>
                 <div class="info">
-                    <span class="color-grey-400">{{Utilities::getGreeting()}},</span><br/>
+                   
                     <a>{{Auth::user()->name}}</a>
                 </div>
                 <a href="{{url('auth/logout')}}" class="button"><i class="ion-log-out"></i></a>

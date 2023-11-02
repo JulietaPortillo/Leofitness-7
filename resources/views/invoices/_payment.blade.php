@@ -9,8 +9,8 @@
                     <thead>
                     <tr>
                         <th>Monto Recibido </th>
-                        <th>Como</th>
-                        <th>En</th>
+                        <th>Metodo de pago</th>
+                        <th>Realizado en</th>
                     </tr>
                     </thead>
                     <tbody>

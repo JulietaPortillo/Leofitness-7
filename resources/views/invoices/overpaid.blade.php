@@ -6,7 +6,7 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100 padding-top-15 no-padding-bottom">
             @include('flash::message')
-            <h1 class="page-title no-line-height">Invoices
+            <h1 class="page-title no-line-height">Recibo con execeso de pago
                 <small>Detalles de recibos con exceso de pago</small>
             </h1>
             @permission(['manage-gymie','pagehead-stats'])
