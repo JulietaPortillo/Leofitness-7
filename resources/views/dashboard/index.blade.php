@@ -89,7 +89,7 @@
                 <div class="col-lg-6">
                     <div class="panel">
                         <div class="panel-title">
-                            <div class="panel-head"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Cheques</div>
+                            <div class="panel-head"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Transferencias</div>
                         </div>
 
                         <div class="panel-body with-nav-tabs">
@@ -97,9 +97,9 @@
                             <ul class="nav nav-tabs">
                                 <li class="active"><a href="#recieved" data-toggle="tab">Recibidos<span
                                                 class="label label-warning margin-left-5">{{ $recievedChequesCount }}</span></a></li>
-                                <li><a href="#deposited" data-toggle="tab">Depositados<span
+                                <li><a href="#deposited" data-toggle="tab">Completados<span
                                                 class="label label-primary margin-left-5">{{ $depositedChequesCount }}</span></a></li>
-                                <li><a href="#bounced" data-toggle="tab">Sin fondos<span class="label label-danger margin-left-5">{{ $bouncedChequesCount }}</span></a>
+                                <li><a href="#bounced" data-toggle="tab">Sin completar<span class="label label-danger margin-left-5">{{ $bouncedChequesCount }}</span></a>
                                 </li>
                             </ul>
 

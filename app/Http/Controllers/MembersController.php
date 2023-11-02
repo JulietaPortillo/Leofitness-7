@@ -368,7 +368,7 @@ class MembersController extends Controller
         $member->updatedBy()->associate(Auth::user());
         $member->save();
 
-        flash()->success('Member details were successfully updated');
+        flash()->success('Detalles del miembro fue actualizado con éxito');
 
         return redirect(action('MembersController@show', ['id' => $member->id]));
     }

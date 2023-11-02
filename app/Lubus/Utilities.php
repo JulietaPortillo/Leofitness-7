@@ -350,19 +350,19 @@ class Utilities
     {
         switch ($status) {
         case '0':
-            return 'Expired';
+            return 'Expirado';
             break;
 
         case '2':
-            return 'Renewed';
+            return 'Renovado';
             break;
 
         case '3':
-            return 'Cancelled';
+            return 'Cancelado';
             break;
 
         default:
-            return 'OnGoing';
+            return 'Activo';
             break;
     }
     }
@@ -394,11 +394,11 @@ class Utilities
     {
         switch ($status) {
         case '0':
-            return 'Cheque';
+            return 'Transferencia';
             break;
 
         default:
-            return 'Cash';
+            return 'Efectivo';
             break;
     }
     }
@@ -408,23 +408,23 @@ class Utilities
     {
         switch ($status) {
         case '1':
-            return 'Deposited';
+            return 'Depositado';
             break;
 
         case '2':
-            return 'Cleared';
+            return 'Completado';
             break;
 
         case '3':
-            return 'Bounced';
+            return 'No completado';
             break;
 
         case '4':
-            return 'Reissued';
+            return 'Reemitido';
             break;
 
         default:
-            return 'Recieved';
+            return 'Recibido';
             break;
     }
     }
@@ -434,11 +434,11 @@ class Utilities
     {
         switch ($gender) {
         case 'm':
-            return 'Male';
+            return 'Masculino';
             break;
 
         case 'f':
-            return 'Female';
+            return 'Femenino';
             break;
     }
     }
@@ -466,7 +466,7 @@ class Utilities
             break;
 
         default:
-            return 'Automatic';
+            return 'Automatico';
             break;
     }
     }

@@ -24,7 +24,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
                                 </a>
                                 @endpermission
 
-                                @permission(['manage-gymie','manage-members','delete-member'])
+                                @permission(['none'])
                                 <button class="btn btn-danger" data-toggle="modal" data-target="#deleteModal-{{$member->id}}" data-id="{{$member->id}}">
                                     <span>Eliminar</span>
                                 </button>
@@ -70,7 +70,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
                                             <div class="row visible-md visible-lg">
                                                 <div class="col-sm-4">
                                                 <a href="{{ $urlPath }}" download="qr-code.png">
-                                            <button type="button" class="btn btn-info">Download QR Code</button>
+                                            <button type="button" class="btn btn-info">Descargar codigo QR</button>
                                             </a>
                                                 </div>
                                             </div>

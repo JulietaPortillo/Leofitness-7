@@ -17,7 +17,7 @@
             <div class="clearfix"></div>
 
             <div class="pull-left">
-                <div class="display-block color-green-50 font-weight-600">Cantidad de pagos del mes</div>
+                <div class="display-block color-green-50 font-weight-600">Ingreso mensual</div>
             </div>
         </div>
     </div>
