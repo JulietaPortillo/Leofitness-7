@@ -15,6 +15,7 @@ use App\Subscription;
 use App\InvoiceDetail;
 use App\PaymentDetail;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MembersController extends Controller
 {
@@ -291,6 +292,16 @@ class MembersController extends Controller
                 $subscription->save();
             }
 
+                // Get the member_id after saving
+                $memberId = $member->id;
+
+                // Generate QR code data
+                $qrCodeData = "Member: $member";
+
+                // Generate QR code and save it as an image file
+                QrCode::size(300)->format('png')->color(255, 25, 25, 0) 
+                ->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
+
             DB::commit();
             flash()->success('Member was successfully created');
 
@@ -298,6 +309,7 @@ class MembersController extends Controller
         } catch (\Exception $e) {
             DB::rollback();
             flash()->error('Error while creating the member');
+            dd($e->getMessage());
 
             return redirect(action('MembersController@index'));
         }

@@ -1,3 +1,6 @@
+<?php 
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+?>
 @extends('app')
 
 @section('content')
@@ -56,18 +59,15 @@
                             <div class="row">                <!--Main row start-->
                                 <div class="col-sm-8">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 d-flex justify-content-center align-items-center">
                                             <!-- Spacer -->
                                             <div class="row visible-md visible-lg">
                                                 <div class="col-sm-4">
                                                     <label>&nbsp;</label>
                                                 </div>
                                             </div>
-                                            <?php
-                                            $images = $member->getMedia('profile');
-                                            $profileImage = ($images->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=22&txt=NA&w=200&h=180' : url($images[0]->getUrl()));
-                                            ?>
-                                            <img class="AutoFitResponsive" src="{{ $profileImage }}"/>
+                                            {!! QrCode::size(250)->color(253, 216, 53)->backgroundColor(38, 50, 56)->generate($member) !!}
+                                           
                                         </div>
 
 
