@@ -6,12 +6,11 @@
                 <td>{{ $recievedCheque->date }}</td>
                 <td>{{ $recievedCheque->payment->payment_amount }}</td>
                 <td><a class="btn btn-info btn-xs btn pull-right"
-                       href="{{ action('PaymentsController@depositCheque',['id' => $recievedCheque->payment_id]) }}">Mark
-                        Deposited</a></td>
+                       href="{{ action('PaymentsController@depositCheque',['id' => $recievedCheque->payment_id]) }}">Marcar depositado</a></td>
             </tr>
         @empty
             <div class="tab-empty-panel font-size-24 color-grey-300">
-                No Data
+                Sin datos
             </div>
         @endforelse
     </table>

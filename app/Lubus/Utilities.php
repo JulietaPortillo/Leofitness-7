@@ -104,19 +104,19 @@ class Utilities
     {
         switch ($aim) {
         case '1':
-            return 'Networking';
+            return 'Rutina';
             break;
 
         case '2':
-            return 'Body Building';
+            return 'Yoga';
             break;
 
         case '3':
-            return 'Fatloss';
+            return 'Perder peso';
             break;
 
         case '4':
-            return 'Weightgain';
+            return 'Ganar musculo';
             break;
 
         case '5':
@@ -156,7 +156,7 @@ class Utilities
     {
         switch ($repeat) {
         case '0':
-            return 'Never Repeat';
+            return 'Nunca repetir';
             break;
 
         case '1':
@@ -210,27 +210,23 @@ class Utilities
     {
         switch ($occupation) {
         case '1':
-            return 'Housewife';
+            return 'No Trabaja';
             break;
 
         case '2':
-            return 'Self Employed';
+            return 'Propio';
             break;
 
         case '3':
-            return 'Professional';
+            return 'Profesional';
             break;
 
         case '4':
-            return 'Freelancer';
-            break;
-
-        case '5':
-            return 'Others';
+            return 'Otros';
             break;
 
         default:
-            return 'Student';
+            return 'Estudiante';
             break;
     }
     }
@@ -240,15 +236,15 @@ class Utilities
     {
         switch ($source) {
         case '1':
-            return 'Word of mouth';
+            return 'Redes Sociales';
             break;
 
         case '2':
-            return 'Others';
+            return 'Otros';
             break;
 
         default:
-            return 'Promotions';
+            return 'Promociones';
             break;
     }
     }
@@ -258,15 +254,15 @@ class Utilities
     {
         switch ($status) {
         case '0':
-            return 'Inactive';
+            return 'Inactivo';
             break;
 
         case '2':
-            return 'Archived';
+            return 'Archivado';
             break;
 
         default:
-            return 'Active';
+            return 'Activo';
             break;
     }
     }
@@ -276,7 +272,7 @@ class Utilities
     {
         switch ($status) {
         case '0':
-            return 'Lost';
+            return 'Perdido';
             break;
 
         case '2':
@@ -328,19 +324,19 @@ class Utilities
     {
         switch ($status) {
         case '1':
-            return 'Paid';
+            return 'Pagado';
             break;
 
         case '2':
-            return 'Partial';
+            return 'Parcial';
             break;
 
         case '3':
-            return 'Overpaid';
+            return 'Exceso';
             break;
 
         default:
-            return 'Unpaid';
+            return 'Sin pagar';
             break;
     }
     }

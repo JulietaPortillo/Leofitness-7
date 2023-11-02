@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use DB;
 use Auth;
 use App\Invoice;
-use App\SmsTrigger;
 use App\ChequeDetail;
 use App\PaymentDetail;
 use Illuminate\Http\Request;
@@ -24,7 +23,7 @@ class PaymentsController extends Controller
         $count = $paymentTotal->sum('payment_amount');
 
         if (! $request->has('drp_start') or ! $request->has('drp_end')) {
-            $drp_placeholder = 'Select daterange filter';
+            $drp_placeholder = 'Seleccione un rango de fechas';
         } else {
             $drp_placeholder = $request->drp_start.' - '.$request->drp_end;
         }
@@ -80,12 +79,12 @@ class PaymentsController extends Controller
 
         
             DB::commit();
-            flash()->success('Payment Details were successfully stored');
+            flash()->success('Detalles de pago almacenados correctamente');
 
             return redirect(action('InvoicesController@show', ['id' => $payment_detail->invoice_id]));
         } catch (Exception $e) {
             DB::rollback();
-            flash()->error('Payment Details weren\'t stored succesfully');
+            flash()->error('Detalles de pago no se almacenaron correctamente');
 
             return redirect('payments/all');
         }
@@ -131,12 +130,12 @@ class PaymentsController extends Controller
             }
 
             DB::commit();
-            flash()->success('Payment Details were successfully updated');
+            flash()->success('Detalles de pago actualizados correctamente');
 
             return redirect(action('InvoicesController@show', ['id' => $payment_detail->invoice_id]));
         } catch (Exception $e) {
             DB::rollback();
-            flash()->error('Payment Details weren\'t updated succesfully');
+            flash()->error('Detalles de pago no se actualizaron correctamente');
 
             return redirect('payments');
         }
@@ -183,7 +182,7 @@ class PaymentsController extends Controller
     {
         ChequeDetail::where('payment_id', $id)->update(['status' => \constChequeStatus::Deposited]);
 
-        flash()->success('Cheque has been marked as deposited');
+        flash()->success('Transferencia marcada como depositada');
 
         return back();
     }
@@ -214,12 +213,12 @@ class PaymentsController extends Controller
             $payment_detail->invoice->save();
 
             DB::commit();
-            flash()->success('Cheque has been marked as cleared');
+            flash()->success('Transferencia marcada como finalizada');
 
             return back();
         } catch (Exception $e) {
             DB::rollback();
-            flash()->error('Error while marking the cheque as cleared');
+            flash()->error('Error al marcar la transferencia como finalizada');
 
             return back();
         }
@@ -229,7 +228,7 @@ class PaymentsController extends Controller
     {
         ChequeDetail::where('payment_id', $id)->update(['status' => \constChequeStatus::Bounced]);
 
-        flash()->success('Cheque has been marked as bounced');
+        flash()->success('Transferencia marcada como no finalizada');
 
         return back();
     }

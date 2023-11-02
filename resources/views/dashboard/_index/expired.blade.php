@@ -49,5 +49,5 @@
 </div>
 @if(!$allExpired->isEmpty())
     <a class="btn btn-color btn-xs palette-concrete pull-right margin-right-10 margin-top-10"
-       href="{{ action('SubscriptionsController@expired') }}">Ver todos</a>
+       href="{{ action('SubscriptionsController@expired') }}">Mostrados todos</a>
 @endif

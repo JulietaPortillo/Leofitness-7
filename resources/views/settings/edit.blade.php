@@ -62,7 +62,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                {!! Form::label('gym_address_2','Direccion Departament y Municipio') !!}
+                                                {!! Form::label('gym_address_2','Direccion Departamento y Municipio') !!}
                                                 {!! Form::text('gym_address_2',$settings['gym_address_2'],['class'=>'form-control', 'id' => 'gym_address_2']) !!}
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@
                 <div class="col-md-12">
                     <div class="panel no-border">
                         <div class="panel-title">
-                            <div class="panel-head font-size-15"><i class="fa fa-file"></i> Invoice</div>
+                            <div class="panel-head font-size-15"><i class="fa fa-file"></i> Recibo</div>
                         </div>
                         <div class="panel-body">
                             <div class="row">                <!--Main row start-->
@@ -102,7 +102,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 {!! Form::label('invoice_name_type','Nombre en el recibo') !!}
-                                                {!! Form::select('invoice_name_type',array('gym_name' => 'Gym Name'),$settings['invoice_name_type'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'invoice_name_type']) !!}
+                                                {!! Form::select('invoice_name_type',array('gym_name' => 'Nombre del gimnacio'),$settings['invoice_name_type'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'invoice_name_type']) !!}
                                             </div>
                                         </div>
 
@@ -174,7 +174,7 @@
                                     <div class="row">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                {!! Form::label('admission_fee','Cargos de admission') !!}
+                                                {!! Form::label('admission_fee','Cargos de admision') !!}
                                                 <div class="input-group">
                                                     <div class="input-group-addon"><i class="fa fa-money"></i></div>
                                                     {!! Form::text('admission_fee',$settings['admission_fee'],['class'=>'form-control', 'id' => 'admission_fee']) !!}

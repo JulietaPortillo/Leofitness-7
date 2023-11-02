@@ -31,14 +31,14 @@
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Financial year start</label>
+                                        <label>Inicio de año fiscal</label>
                                         <p>{{ $settings['financial_start'] }}</p>
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
-                                        <label>Financial year end</label>
+                                        <label>Fin de año fiscal</label>
                                         <p>{{ $settings['financial_end'] }}</p>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label>Gym Address Line 1</label>
+                                                <label>Direccion del gimnacio</label>
                                                 <p>{{ $settings['gym_address_1'] }}</p>
                                             </div>
                                         </div>
@@ -66,7 +66,7 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label>Gym Address Line 2</label>
+                                                <label>Direccion del gimnacio</label>
                                                 <p>{{ $settings['gym_address_2'] }}</p>
                                             </div>
                                         </div>

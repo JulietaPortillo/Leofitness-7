@@ -98,7 +98,7 @@
     <div class="col-sm-6">
         <div class="form-group">
             {!! Form::label('source','Como nos encontro?',['class'=>'control-label']) !!}
-            {!! Form::select('source',array('0' => 'Promociones', '1' => 'Alguien mas', '2' => 'Otros'),null,['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'source']) !!}
+            {!! Form::select('source',array('0' => 'Promociones', '1' => 'Redes Sociales', '2' => 'Otros'),null,['class' => 'form-control selectpicker show-tick show-menu-arrow', 'id' => 'source']) !!}
         </div>
     </div>
 </div>

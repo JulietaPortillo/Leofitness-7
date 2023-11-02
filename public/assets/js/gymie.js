@@ -256,17 +256,17 @@ var gymie = (function ($) {
 
 			function recordDelete(recordId, deleteUrl, dependency, dependencyMessage) {
 				if (dependency) {
-					swal("Warning!", dependencyMessage, "warning");
+					swal("Advertencia", dependencyMessage, "warning");
 				}
 				else {
 					swal({
-						title: "Are you sure?",
-						text: "Deleting this will also delete all its related records , do you still want to delete this record?",
+						title: "Desea eliminar este miembro?",
+						text: "Eliminando este miembro, tambien eliminar todos sus records. Desea continuar?",
 						type: "warning",
 						showCancelButton: true,
 						showLoaderOnConfirm: true,
 						closeOnConfirm: false,
-						confirmButtonText: "Yes, delete it!",
+						confirmButtonText: "Eliminando!",
 						confirmButtonColor: "#ec6c62"
 					}, function () {
 						$.ajax({
@@ -275,15 +275,15 @@ var gymie = (function ($) {
 						})
 							.done(function (data) {
 								swal({
-									title: "Deleted",
-									text: "Record has been successfully deleted",
+									title: "Eliminado",
+									text: "Record eliminado satisfactoriamente",
 									type: "success"
 								}, function () {
 									location.reload();
 								});
 							})
 							.error(function (data) {
-								swal("Oops", "We couldn't connect to the server!", "error");
+								swal("Oops", "No se pudo contactar con el servidor!", "error");
 							});
 					});
 				};

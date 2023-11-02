@@ -6,7 +6,7 @@
         <!-- BEGIN PAGE HEADING -->
         <div class="page-head bg-grey-100">
             @include('flash::message')
-            <h1 class="page-title">Rols</h1>
+            <h1 class="page-title">Rol</h1>
             <a href="{{ action('AclController@createRole') }}" class="btn btn-primary active pull-right" role="button"> Agregar</a></h1>
         </div>
 
