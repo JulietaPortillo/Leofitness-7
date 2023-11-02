@@ -67,6 +67,14 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
                                                 </div>
                                             </div>
                                             {!! QrCode::size(250)->color(253, 216, 53)->backgroundColor(38, 50, 56)->generate($member) !!}
+                                            <div class="row visible-md visible-lg">
+                                                <div class="col-sm-4">
+                                                <a href="{{ $urlPath }}" download="qr-code.png">
+                                            <button type="button" class="btn btn-info">Download QR Code</button>
+                                            </a>
+                                                </div>
+                                            </div>
+                                            
                                            
                                         </div>
 

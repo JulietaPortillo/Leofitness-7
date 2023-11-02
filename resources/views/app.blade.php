@@ -65,11 +65,6 @@
             <!-- BEGIN RPOFILE -->
             <div class="nav-profile">
                 <div class="thumb">
-                    <?php
-                    $media = Auth::user()->getMedia();
-                    $image = ($media->isEmpty() ? 'https://placeholdit.imgix.net/~text?txtsize=18&txt=NA&w=50&h=50' : url($media[0]->getUrl('thumb')));
-                    ?>
-                    <img src="{{ $image }}" class="img-circle" alt=""/>
                 </div>
                 <div class="info">
                     <span class="color-grey-400">{{Utilities::getGreeting()}},</span><br/>

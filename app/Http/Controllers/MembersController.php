@@ -15,6 +15,7 @@ use App\Subscription;
 use App\InvoiceDetail;
 use App\PaymentDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class MembersController extends Controller
@@ -75,7 +76,18 @@ class MembersController extends Controller
     {
         $member = Member::findOrFail($id);
 
-        return view('members.show', compact('member'));
+        // Generate QR code data
+        $qrCodeData = "Member ID: {$member->id}";
+
+        // Generate QR code as a file
+        $qrCodePath = "../public/qrCodes/qr-code-{$member->id}.png";
+        QrCode::format('png')->size(300)->generate($qrCodeData, $qrCodePath);
+        $urlPath = url('/qrCodes/qr-code-'.$member->id.'.png');
+        
+
+        return view('members.show', compact('member', 'urlPath'));
+
+        //return view('members.show', compact('member'));
     }
 
     /**
