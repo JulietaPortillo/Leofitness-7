@@ -19,6 +19,9 @@ Route::get('data/migration', ['middleware' => ['auth', 'role:Gymie'], 'uses' => 
 Route::get('data/media/migration', ['middleware' => ['auth', 'role:Gymie'], 'uses' => 'DataMigrationController@migrateMedia']);
 Route::get('excel/migration', ['middleware' => ['auth', 'role:Gymie'], 'uses' => 'DataMigrationController@migrateExcel']);
 
+//Scanner
+Route::get('/qr-code-scanner', 'QRCodeScannerController@index')->name('qr-code-scanner.index');
+
 //Report DATA
 Route::get('reportData/members', 'ReportData\MembersController@details');
 

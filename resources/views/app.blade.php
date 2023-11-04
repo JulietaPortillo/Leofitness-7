@@ -220,6 +220,8 @@
 <script src="{{ URL::asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('assets/plugins/bootstrap-tokenfield/bootstrap-tokenfield.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('assets/plugins/sweetalert/sweetalert.min.js') }}" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/plugins/instascan.min.js') }}" type="text/javascript"></script>
+
 <script src="{{ URL::asset('assets/js/core.js') }}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 

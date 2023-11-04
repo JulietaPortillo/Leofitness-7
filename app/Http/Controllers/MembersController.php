@@ -308,11 +308,11 @@ class MembersController extends Controller
                 $memberId = $member->id;
 
                 // Generate QR code data
-                $qrCodeData = "Member: $member";
-
+                $qrCodeData = "members/{$memberId}/show";
+                
                 // Generate QR code and save it as an image file
                 QrCode::size(300)->format('png')->color(255, 25, 25, 0) 
-                ->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
+                ->generate("asassa", "../public/qrCodes/qr-code-$memberId.png");
 
             DB::commit();
             flash()->success('Member was successfully created');
