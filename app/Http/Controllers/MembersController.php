@@ -28,7 +28,7 @@ class MembersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * 
      */
     public function index(Request $request)
     {
@@ -70,7 +70,7 @@ class MembersController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * 
      */
     public function show($id)
     {
@@ -93,7 +93,7 @@ class MembersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * 
      */
     public function create()
     {
@@ -134,7 +134,7 @@ class MembersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @return Response
+     * 
      */
     public function store(Request $request)
     {
@@ -309,10 +309,10 @@ class MembersController extends Controller
 
                 // Generate QR code data
                 $qrCodeData = "members/{$memberId}/show";
-                
+            
                 // Generate QR code and save it as an image file
                 QrCode::size(300)->format('png')->color(255, 25, 25, 0) 
-                ->generate("asassa", "../public/qrCodes/qr-code-$memberId.png");
+                ->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
 
             DB::commit();
             flash()->success('Member was successfully created');
@@ -334,7 +334,7 @@ class MembersController extends Controller
     /**
      * Edit a created resource in storage.
      *
-     * @return Response
+     * 
      */
     public function edit($id)
     {
@@ -348,7 +348,7 @@ class MembersController extends Controller
     /**
      * Update an edited resource in storage.
      *
-     * @return Response
+     * 
      */
     public function update($id, Request $request)
     {
@@ -376,7 +376,7 @@ class MembersController extends Controller
     /**
      * Archive a resource in storage.
      *
-     * @return Response
+     * 
      */
     public function archive($id, Request $request)
     {
