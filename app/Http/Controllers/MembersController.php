@@ -77,7 +77,8 @@ class MembersController extends Controller
         $member = Member::findOrFail($id);
 
         // Generate QR code data
-        $qrCodeData = "Member ID: {$member->id}";
+        
+        $qrCodeData = "members/{$member->id}/show";
 
         // Generate QR code as a file
         $qrCodePath = "../public/qrCodes/qr-code-{$member->id}.png";
@@ -311,8 +312,7 @@ class MembersController extends Controller
                 $qrCodeData = "members/{$memberId}/show";
             
                 // Generate QR code and save it as an image file
-                QrCode::size(300)->format('png')->color(255, 25, 25, 0) 
-                ->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
+                //QrCode::size(50)->format('png')->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
 
             DB::commit();
             flash()->success('Member was successfully created');

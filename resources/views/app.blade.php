@@ -14,6 +14,7 @@
     <link href="{{ URL::asset('assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/plugins/ionicons/css/ionicons.min.css') }}" rel="stylesheet"/>
     <link href="{{ URL::asset('assets/plugins/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"/>
+    
     <!-- END CORE FRAMEWORK -->
 
     <!-- BEGIN PLUGIN STYLES -->
@@ -188,6 +189,12 @@
                 </li>
                 @endpermission
 
+                <li class="{{ Utilities::setActiveMenu('qr-code-scanner') }}">
+                    <a href="{{ action('QRCodeScannerController@index') }}">
+                        <i class="fa fa-qrcode"></i> <span>QR Code Scanner</span>
+                    </a>
+                </li>
+
                 @permission(['manage-gymie','manage-settings'])
                 <li class="{{ Utilities::setActiveMenu('settings*') }}">
                     <a href="{{ action('SettingsController@edit') }}">
@@ -220,7 +227,8 @@
 <script src="{{ URL::asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('assets/plugins/bootstrap-tokenfield/bootstrap-tokenfield.min.js') }}" type="text/javascript"></script>
 <script src="{{ URL::asset('assets/plugins/sweetalert/sweetalert.min.js') }}" type="text/javascript"></script>
-<script src="{{ URL::asset('assets/plugins/instascan.min.js') }}" type="text/javascript"></script>
+<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" type="text/javascript"></script>
+<script src="{{ URL::asset('assets/js/qrModal.js') }}" type="text/javascript"></script>
 
 <script src="{{ URL::asset('assets/js/core.js') }}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->

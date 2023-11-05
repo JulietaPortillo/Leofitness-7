@@ -13,6 +13,20 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
             <h1 class="page-title no-line-height">Miembros
                 @permission(['manage-gymie','manage-members','add-member'])
                 <a href="{{ action('MembersController@create') }}" class="page-head-btn btn-sm btn-primary active" role="button">Agregar nuevo miembro</a>
+                <button class="page-head-btn btn-sm btn-primary active" id="openScannerBtn">Scan QR Code</button>
+                    <!-- Modal -->
+                    <div class="modal" tabindex="-1" id="qrScannerModal">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Buscador por QR</h5>
+                                </div>
+                                <div class="modal-body">
+                                <video id="scanner" style="width: 100%; height: auto; max-width: 100%; border: 2px solid #333; border-radius: 5px;"></video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <small>Detalles de los miembros</small>
             </h1>
             @permission(['manage-gymie','pagehead-stats'])
