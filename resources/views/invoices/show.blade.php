@@ -1,3 +1,7 @@
+<?php
+    use Carbon\Carbon;
+    
+?>
 @extends('app')
 
 @section('content')
@@ -36,7 +40,7 @@
                                         }
                                         echo implode($modes, ',');
                                         ?><br>
-                                        <strong>Pago</strong><br>
+                                        <strong>Status de pago</strong><br>
                                         {{ Utilities::getInvoiceStatus ($invoice->status) }}<br>
                                     </address>
                                 </div>
@@ -48,8 +52,9 @@
                                         <strong>Generado el</strong><br>
                                         {{ $invoice->created_at->toDayDateTimeString()}}<br>
                                         <strong>Proximo cobro</strong><br>
-                                        In {{ $invoice->subscription->start_date->diffInDays($invoice->subscription->end_date) }} days
-                                        On {{ $invoice->subscription->end_date->toFormattedDateString() }}<br>
+                                        Dentro de {{ $invoice->subscription->start_date->diffInDays($invoice->subscription->end_date) }} dias
+                                     
+                                        para la fecha {{ Carbon::parse($invoice->created_at)->formatLocalized('%m %d %Y ') }}<br>
                                     </address>
                                 </div>
                             </div>        <!-- / inner row -->
@@ -138,8 +143,8 @@
                                         <thead>
                                         <tr>
                                             <td><strong>Monto</strong></td>
-                                            <td class="text-center"><strong>Como</strong></td>
-                                            <td class="text-right"><strong>En</strong></td>
+                                            <td class="text-center"><strong>Metodo de pago</strong></td>
+                                            <td class="text-right"><strong>Fecha</strong></td>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -147,7 +152,7 @@
                                             <tr>
                                                 <td>{{ ($paymentDetail->payment_amount >= 0 ? $paymentDetail->payment_amount : str_replace("-","",$paymentDetail->payment_amount)." (Paid)") }}</td>
                                                 <td class="text-center">{{ Utilities::getPaymentMode ($paymentDetail->mode) }}</td>
-                                                <td class="text-right">{{ $paymentDetail->created_at->toDayDateTimeString() }}</td>
+                                                <td class="text-right">{{ Carbon::parse($invoice->created_at)->formatLocalized('%m %d %Y ') }}</td>
                                             </tr>
                                         @endforeach
                                         </tbody>

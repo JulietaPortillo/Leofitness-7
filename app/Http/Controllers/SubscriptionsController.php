@@ -207,7 +207,7 @@ class SubscriptionsController extends Controller
     public function edit($id)
     {
         $subscription = Subscription::findOrFail($id);
-        // $carbonToday = Carbon::today()->format('Y-m-d');
+         $carbonToday = Carbon::today()->format('Y-m-d');
         // $subscriptionEndDate = $subscription->end_date->format('Y-m-d');
         $diff = Carbon::today()->diffInDays($subscription->end_date);
         //$gymieDiff = $diff->format('Y-m-d');

@@ -41,9 +41,6 @@
                                 {!! Form::label('number','Numero de transferencia') !!}
                                 {!! Form::text('number',null,['class'=>'form-control', 'id' => 'number']) !!}
                             </div>
-                        </div>
-
-                        <div class="col-sm-6">
                             <div class="form-group">
                                 {!! Form::label('date','Fecha de transferencia') !!}
                                 {!! Form::text('date',null,['class'=>'form-control datepicker-default', 'id' => 'date']) !!}

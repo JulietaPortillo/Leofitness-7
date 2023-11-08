@@ -1,3 +1,7 @@
+<?php
+    use Carbon\Carbon;
+    Carbon::setLocale('es');
+?>
 @extends('app')
 
 @section('content')
@@ -101,7 +105,7 @@
                                             <td>
                                                 <span class="{{ Utilities::getInvoiceLabel ($invoice->status) }}">{{ Utilities::getInvoiceStatus ($invoice->status) }}</span>
                                             </td>
-                                            <td>{{ $invoice->created_at->toDayDateTimeString()}}</td>
+                                            <td>{{ Carbon::parse($invoice->created_at)->formatLocalized('%d %B %Y ') }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-info">Acciones</button>

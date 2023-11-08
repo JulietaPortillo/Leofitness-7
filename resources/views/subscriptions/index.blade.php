@@ -136,13 +136,6 @@
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
                                                     <ul class="dropdown-menu" role="menu">
-                                                        <li>
-                                                            @permission(['manage-gymie','manage-subscriptions','edit-subscription'])
-                                                            <a href="{{ action('SubscriptionsController@edit',['id' => $subscription->id]) }}">
-                                                                Editar detalles
-                                                            </a>
-                                                            @endpermission
-                                                        </li>
                                                         @permission(['manage-gymie','manage-subscriptions','change-subscription'])
                                                         <li>
                                                             <a href="{{ action('SubscriptionsController@change',['id' => $subscription->id]) }}">
