@@ -171,14 +171,7 @@ class MembersController extends Controller
             $member->updatedBy()->associate(Auth::user());
             $member->save();
 
-            // Adding media i.e. Profile & proof photo
-            if ($request->hasFile('photo')) {
-                $member->addMedia($request->file('photo'))->usingFileName('profile_'.$member->id.'.'.$request->photo->getClientOriginalExtension())->toCollection('profile');
-            }
-
-            if ($request->hasFile('proof_photo')) {
-                $member->addMedia($request->file('proof_photo'))->usingFileName('proof_'.$member->id.'.'.$request->proof_photo->getClientOriginalExtension())->toCollection('proof');
-            }
+            
 
             // Helper function for calculating payment status
             $invoice_total = $request->admission_amount + $request->subscription_amount + $request->taxes_amount - $request->discount_amount;
@@ -265,19 +258,10 @@ class MembersController extends Controller
                 $cheque_details->save();
             }
 
-            // On member transfer update enquiry Status
-            if ($request->has('transfer_id')) {
-                $enquiry = Enquiry::findOrFail($request->transfer_id);
-                $enquiry->status = \constEnquiryStatus::Member;
-                $enquiry->updatedBy()->associate(Auth::user());
-                $enquiry->save();
-            }
 
             //Updating Numbering Counters
             Setting::where('key', '=', 'invoice_last_number')->update(['value' => $request->invoiceCounter]);
             Setting::where('key', '=', 'member_last_number')->update(['value' => $request->memberCounter]);
-            $sender_id = \Utilities::getSetting('sms_sender_id');
-            $gym_name = \Utilities::getSetting('gym_name');
 
             
 
@@ -305,23 +289,13 @@ class MembersController extends Controller
                 $subscription->save();
             }
 
-                // Get the member_id after saving
-                $memberId = $member->id;
-
-                // Generate QR code data
-                $qrCodeData = "members/{$memberId}/show";
-            
-                // Generate QR code and save it as an image file
-                //QrCode::size(50)->format('png')->generate($qrCodeData, "../public/qrCodes/qr-code-$memberId.png");
-
-            DB::commit();
             flash()->success('Member was successfully created');
 
             return redirect(action('MembersController@show', ['id' => $member->id]));
         } catch (\Exception $e) {
             DB::rollback();
-            flash()->error('Error while creating the member');
-            dd($e->getMessage());
+            flash()->error('Ocurrio un error al crear el miembro');
+            
 
             return redirect(action('MembersController@index'));
         }

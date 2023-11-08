@@ -20,7 +20,7 @@
                             <table id="staffs" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th class="text-center">Identificador</th>
+                                    
                                     <th class="text-center">Nombre</th>
                                     <th class="text-center">Descripcion</th>
                                     <th class="text-center">Acciones</th>
@@ -30,7 +30,7 @@
 
                                 <tr>
                                     @foreach ($permissions as $permission)
-                                        <td class="text-center">{{ $permission->name}}</td>
+                                        
                                         <td class="text-center">{{ $permission->display_name}}</td>
                                         <td class="text-center">{{ $permission->description}}</td>
 
@@ -38,10 +38,12 @@
                                             <a class="btn btn-info btn-sm" href="{{ action('AclController@editPermission',['id' => $permission->id]) }}">
                                                 <i class="fa fa-edit "></i>
                                             </a>
+                                            @permission(['delete-permission'])
                                             <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal-{{$permission->id}}"
                                                     data-id="{{$permission->id}}">
                                                 <i class="fa fa-trash-o "></i>
                                             </button>
+                                            @endpermission
                                         </td>
                                         <!-- Modal -->
                                         <div id="deleteModal-{{$permission->id}}" class="modal fade" permission="dialog">

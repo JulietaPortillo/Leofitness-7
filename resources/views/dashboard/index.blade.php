@@ -32,11 +32,12 @@
                 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                     @include('dashboard._index.outstandingPayments')
                 </div>
-
+                @permission(['manage-gymie','view-dashboard-collection-stats'])
                 <!-- Collection -->
                 <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                     @include('dashboard._index.collection')
                 </div>
+                @endpermission
             </div>
             @endpermission
 
@@ -47,8 +48,10 @@
                     <div class="panel">
                         <div class="panel-title">
                             <div class="panel-head"><i class="fa fa-users"></i><a href="{{ action('MembersController@index') }}">Miembros</a></div>
+                            @permission(['manage-gymie','add-member', 'manage-members'])
                             <div class="pull-right"><a href="{{ action('MembersController@create') }}" class="btn-sm btn-primary active" role="button"><i
                                             class="fa fa-user-plus"></i> Agregar</a></div>
+                                            @endpermission
                         </div>
 
                         <div class="panel-body with-nav-tabs">
@@ -86,6 +89,7 @@
                 </div>
                 @endpermission
 
+                @permission(['manage-gymie','view-dashboard-payments-tab'])
                 <div class="col-lg-6">
                     <div class="panel">
                         <div class="panel-title">
@@ -121,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                @endpermission
 
             </div>
 

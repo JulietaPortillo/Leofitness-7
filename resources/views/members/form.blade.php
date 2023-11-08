@@ -64,7 +64,7 @@
     <div class="col-sm-6">
         <div class="form-group">
             {!! Form::label('health_issues','DPI') !!}
-            {!! Form::text('health_issues',null,['class'=>'form-control', 'id' => 'health_issues']) !!}
+            {!! Form::text('health_issues',null,['class'=>'form-control', 'id' => 'health_issues', 'pattern' => '[0-9]*']) !!}
         </div>
     </div>
 </div>

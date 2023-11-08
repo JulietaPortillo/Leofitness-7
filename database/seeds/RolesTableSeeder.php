@@ -15,13 +15,13 @@ class RolesTableSeeder extends Seeder
         // Create Roles
         $roles = [
             [
-                'name'  =>  'Gymie',
+                'name'  =>  'SuperAdmin',
             ],
             [
-                'name'  =>  'Admin',
+                'name'  =>  'Propietario',
             ],
             [
-                'name'  =>  'Manager',
+                'name'  =>  'Gerente',
             ],
         ];
 

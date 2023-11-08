@@ -180,8 +180,8 @@
                         <li class="{{ Utilities::setActiveMenu('user/create') }}"><a href="{{ action('AclController@createUser') }}"><i class="fa fa-list"></i>
                                 Agregar nuevo usuario</a></li>
                         <li class="{{ Utilities::setActiveMenu('user/role') }}"><a href="{{ action('AclController@roleIndex') }}"><i class="fa fa-list"></i>
-                                Rols</a></li>
-                        @role('Gymie')
+                                Rol</a></li>
+                        @role('SuperAdmin')
                         <li class="{{ Utilities::setActiveMenu('user/permission') }}"><a href="{{ action('AclController@permissionIndex') }}"><i
                                         class="fa fa-list"></i> Permisos </a></li>
                         @endrole
@@ -191,7 +191,7 @@
 
                 <li class="{{ Utilities::setActiveMenu('qr-code-scanner') }}">
                     <a href="{{ action('QRCodeScannerController@index') }}">
-                        <i class="fa fa-qrcode"></i> <span>QR Code Scanner</span>
+                        <i class="fa fa-qrcode"></i> <span>Scanner de codigo QR</span>
                     </a>
                 </li>
 

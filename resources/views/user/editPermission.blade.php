@@ -27,13 +27,7 @@
 
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="form-group">
-                                        {!! Form::label('name','Name') !!}
-                                        {!! Form::text('name',$permission->name,['class'=>'form-control', 'id' => 'name']) !!}
-                                    </div>
-                                </div>
-
+                               
                                 <div class="col-sm-3">
                                     <div class="form-group">
                                         {!! Form::label('display_name','Display name') !!}

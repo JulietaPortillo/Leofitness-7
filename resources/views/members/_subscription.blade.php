@@ -1,6 +1,21 @@
 <?php
 use Carbon\Carbon;
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Add click event listener to the form submission button
+    $('#yourFormId').submit(function(event) {
+        // Check if no service is selected
+        if ($('.childPlan').filter(':selected').length === 0) {
+            // Prevent form submission
+            event.preventDefault();
+            // Show an alert or any other validation message to the user
+            alert('Please select a service before submitting the form.');
+        }
+    });
+});
+</script>
 <div class="row" id="optionBox">
     <div class="col-md-12">
         <div class="panel no-border">

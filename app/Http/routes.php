@@ -208,7 +208,7 @@ Route::group(['prefix' => 'user/role', 'middleware' => ['permission:manage-gymie
 });
 
 //Permissions
-Route::group(['prefix' => 'user/permission', 'middleware' => ['auth', 'role:Gymie']], function () {
+Route::group(['prefix' => 'user/permission', 'middleware' => ['auth', 'role:SuperAdmin']], function () {
     Route::get('/', 'AclController@permissionIndex');
     Route::get('create', 'AclController@createPermission');
     Route::post('/', 'AclController@storePermission');
