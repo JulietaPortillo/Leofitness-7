@@ -2682,38 +2682,6 @@ fieldset[disabled] .btn-vk.active {
 }
 
 
-/* Modal styling */
-body #qrScannerModal {
-    display: none; /* Hide the modal by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    z-index: 1;
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-}
-
-/* Modal content styling */
-.modal-content {
-    background-color: #740000;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%; /* Set the maximum width for the modal content */
-}
-
-/* Video element styling */
- #scanner {
-    width: 100%; /* Make the video element fill the container */
-    height: auto;
-    border: 2px solid #333; /* Add a border for better visibility */
-    border-radius: 5px;
-}
-
 
 /* Pagination */
 .pagination > li > a {

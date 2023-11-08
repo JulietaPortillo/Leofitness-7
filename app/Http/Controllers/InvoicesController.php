@@ -8,6 +8,7 @@ use JavaScript;
 use App\Invoice;
 use App\Service;
 use Carbon\Carbon;
+Carbon::setLocale('es');
 use App\ChequeDetail;
 use App\Subscription;
 use App\InvoiceDetail;
@@ -16,6 +17,7 @@ use Illuminate\Http\Request;
 
 class InvoicesController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware('auth');

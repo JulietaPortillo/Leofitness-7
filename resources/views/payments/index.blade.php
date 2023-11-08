@@ -1,3 +1,7 @@
+<?php
+    use Carbon\Carbon;
+    Carbon::setLocale('es');
+?>
 @extends('app')
 
 @section('content')
@@ -89,8 +93,10 @@
                                         <th>Nombre del miembro</th>
                                         <th>Monto</th>
                                         <th>Metodo de pago</th>
-                                        <th>Realizado en</th>
+                                        <th>Fecha realizada </th>
+                                        @permission(['manage-gymie','manage-payments','edit-payment','delete-payment'])
                                         <th class="text-center">Acciones</th>
+                                        @endpermission
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -113,15 +119,17 @@
                                                     ({{ ($cheque_detail ? Utilities::getChequeStatus($cheque_detail->status) : "NA") }})
                                                 </td>
                                             @endif
-                                            <td>{{ $payment_detail->created_at->toDayDateTimeString() }}</td>
+                                            <td>{{ Carbon::parse($payment_detail->created_at)->formatLocalized('%d %B %Y ') }}</td>
 
                                             <td class="text-center">
+                                                @permission(['manage-gymie','manage-payments','edit-payment','delete-payment'])
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-info">Acciones</button>
                                                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                         <span class="caret"></span>
                                                         <span class="sr-only">Toggle Dropdown</span>
                                                     </button>
+                                                    @endpermission
                                                     <ul class="dropdown-menu" role="menu">
                                                         <li>
                                                             @permission(['manage-gymie','manage-payments','edit-payment'])

@@ -31,7 +31,7 @@ class PermissionsRoleTableSeeder extends Seeder
             'role_id' => '3',
           ],
           [
-            'permission_id' => '21',
+            'permission_id' => '7',
             'role_id' => '3',
           ],
           [
@@ -126,7 +126,30 @@ class PermissionsRoleTableSeeder extends Seeder
             'permission_id' => '3',
             'role_id' => '3',
           ],
-          
+          [
+            'permission_id' => '15',
+            'role_id' => '3',
+          ],
+          [
+            'permission_id' => '41',
+            'role_id' => '3',
+          ],
+          [
+            'permission_id' => '35',
+            'role_id' => '3',
+          ],
+          [
+            'permission_id' => '40',
+            'role_id' => '3',
+          ],
+          [
+            'permission_id' => '19',
+            'role_id' => '3',
+          ],
+          [
+            'permission_id' => '20',
+            'role_id' => '3',
+          ],   
         ];
 
         foreach ($permissions_role as $permission_role) {

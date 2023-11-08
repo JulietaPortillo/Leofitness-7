@@ -139,6 +139,7 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
+
         // Member Model Validation
         $this->validate($request, ['email' => 'unique:mst_members,email',
                                    'contact' => 'unique:mst_members,contact',
@@ -171,7 +172,14 @@ class MembersController extends Controller
             $member->updatedBy()->associate(Auth::user());
             $member->save();
 
-            
+            // Adding media i.e. Profile & proof photo
+            if ($request->hasFile('photo')) {
+                $member->addMedia($request->file('photo'))->usingFileName('profile_'.$member->id.'.'.$request->photo->getClientOriginalExtension())->toCollection('profile');
+            }
+
+            if ($request->hasFile('proof_photo')) {
+                $member->addMedia($request->file('proof_photo'))->usingFileName('proof_'.$member->id.'.'.$request->proof_photo->getClientOriginalExtension())->toCollection('proof');
+            }
 
             // Helper function for calculating payment status
             $invoice_total = $request->admission_amount + $request->subscription_amount + $request->taxes_amount - $request->discount_amount;
@@ -258,10 +266,19 @@ class MembersController extends Controller
                 $cheque_details->save();
             }
 
+            // On member transfer update enquiry Status
+            if ($request->has('transfer_id')) {
+                $enquiry = Enquiry::findOrFail($request->transfer_id);
+                $enquiry->status = \constEnquiryStatus::Member;
+                $enquiry->updatedBy()->associate(Auth::user());
+                $enquiry->save();
+            }
 
             //Updating Numbering Counters
             Setting::where('key', '=', 'invoice_last_number')->update(['value' => $request->invoiceCounter]);
             Setting::where('key', '=', 'member_last_number')->update(['value' => $request->memberCounter]);
+            $sender_id = \Utilities::getSetting('sms_sender_id');
+            $gym_name = \Utilities::getSetting('gym_name');
 
             
 
@@ -289,7 +306,8 @@ class MembersController extends Controller
                 $subscription->save();
             }
 
-            flash()->success('Member was successfully created');
+            DB::commit();
+            flash()->success('Miembro fue creado con éxito');
 
             return redirect(action('MembersController@show', ['id' => $member->id]));
         } catch (\Exception $e) {

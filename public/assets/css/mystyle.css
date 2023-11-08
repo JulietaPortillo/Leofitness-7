@@ -156,3 +156,19 @@ span.show-data {
 .table-bordered > thead > tr > th {
     vertical-align: middle;
 }
+
+#qrScannerModal .modal-dialog {
+    max-width: 80vw; /* Set the maximum width of the modal dialog */
+}
+
+#qrScannerModal .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Set the height of the modal body */
+}
+
+#scanner {
+    width: 100%; /* Set the width of the video element to 100% */
+    max-height: 100%; /* Set the maximum height of the video element */
+}

@@ -22,7 +22,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
                                     <h5 class="modal-title">Buscador por QR</h5>
                                 </div>
                                 <div class="modal-body">
-                                <video id="scanner" style="width: 100%; height: auto; max-width: 100%; border: 2px solid #333; border-radius: 5px;"></video>
+                                <video id="scanner"></video>
                                 </div>
                             </div>
                         </div>
