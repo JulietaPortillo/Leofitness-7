@@ -31,6 +31,11 @@ class SettingsController extends Controller
         // Get All Inputs Except '_Token' to loop through and save
         $settings = $request->except('_token');
 
+        // Update All Settings
+        foreach ($settings as $key => $value) {
+            Setting::where('key', '=', $key)->update(['value' => $value]);
+        }
+
 
         flash()->success('Configuraciones Actualizadas!');
 
