@@ -41,13 +41,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         {!! Form::label('mode','Metodo de pago') !!}
-                                        {!! Form::select('mode',array('1' => 'Effectivo', '0' => 'Transferencia'),(isset($payment_detail) ? $payment_detail->mode : null),['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'mode']) !!}
+                                        {!! Form::select('mode', array('1' => 'Efectivo', '0' => 'Transferencia'), (isset($payment_detail) ? $payment_detail->mode : null), ['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'paymentMode']) !!}
                                     </div>
                                 </div>
                             </div>
-
-                            @if($payment_detail->mode == 0)
-                                <div id="chequeDetails">
+                                
+                            
+                            <div id="chequeDetails" style="display: {{ isset($payment_detail) && $payment_detail->mode == 0 ? 'block' : 'none' }}">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
@@ -66,7 +66,25 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endif
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Hide the chequeDetails div initially
+        $('#chequeDetails').hide();
+
+        // Add change event listener to the paymentMode select dropdown
+        $('#paymentMode').change(function() {
+            // If Transferencia is selected, show the chequeDetails div, otherwise hide it
+            if ($(this).val() === '0') {
+                $('#chequeDetails').show();
+            } else {
+                $('#chequeDetails').hide();
+            }
+        });
+    });
+</script>
+                            
 
                             <div class="row">
                                 <div class="col-sm-6">

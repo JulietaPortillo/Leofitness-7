@@ -228,7 +228,7 @@ var gymie = (function ($) {
 							});
 						})
 						.error(function (data) {
-							swal("Oops", "We couldn't connect to the server!", "error");
+							swal("Oops", "No se pudo conectar al servidor!", "error");
 						});
 				});
 			}
@@ -260,8 +260,8 @@ var gymie = (function ($) {
 				}
 				else {
 					swal({
-						title: "Desea eliminar este miembro?",
-						text: "Eliminando este miembro, tambien eliminar todos sus records. Desea continuar?",
+						title: "Desea eliminar este registro?",
+						text: "Eliminando este registro, tambien elimina todos sus records. Desea continuar?",
 						type: "warning",
 						showCancelButton: true,
 						showLoaderOnConfirm: true,

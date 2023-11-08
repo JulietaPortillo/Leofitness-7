@@ -32,3 +32,28 @@ $(document).ready(function() {
 					}
 				});
 			});
+
+			$(document).ready(function() {
+				// Bootstrap Validator initialization
+				$('#paymentsform').bootstrapValidator({
+					// Your existing validation rules go here
+				});
+			
+				// Function to toggle transferencia number and date fields
+				function toggleTransferenciaFields() {
+					var paymentMethod = $('#mode').val();
+					if (paymentMethod == 0) {
+						$('#chequeDetails').show();
+					} else {
+						$('#chequeDetails').hide();
+					}
+				}
+			
+				// Toggle transferencia number and date fields on page load
+				toggleTransferenciaFields();
+			
+				// Toggle transferencia number and date fields when payment method changes
+				$('#mode').on('change', function() {
+					toggleTransferenciaFields();
+				});
+			});
