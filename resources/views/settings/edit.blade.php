@@ -102,7 +102,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 {!! Form::label('invoice_name_type','Nombre en el recibo') !!}
-                                                {!! Form::select('invoice_name_type',array('gym_name' => 'Nombre del gimnacio'),$settings['invoice_name_type'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'invoice_name_type']) !!}
+                                                {!! Form::select('invoice_name_type',array('gym_name' => 'Nombre del gimnasio'),$settings['invoice_name_type'],['class'=>'form-control selectpicker show-tick show-menu-arrow', 'id' => 'invoice_name_type']) !!}
                                             </div>
                                         </div>
 
