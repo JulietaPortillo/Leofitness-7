@@ -13,7 +13,7 @@
 
                         {!! Form::model($plan, ['method' => 'POST','action' => ['PlansController@update',$plan->id],'id'=>'plansform']) !!}
 
-                        @include('plans.form',['submitButtonText' => 'Update'])
+                        @include('plans.form',['submitButtonText' => 'Actualizar plan'])
 
                         {!! Form::Close() !!}
 
