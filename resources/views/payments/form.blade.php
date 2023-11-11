@@ -54,8 +54,17 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="form-group">
-                {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary pull-right']) !!}
+                {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary pull-right', 'id' => 'submit-btn']) !!}
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('submit-btn').addEventListener('click', function(event) {
+        if (document.getElementById('invoice_id').value == '') {
+            event.preventDefault();
+            alert('Please select an invoice');
+        }
+    });
+</script>

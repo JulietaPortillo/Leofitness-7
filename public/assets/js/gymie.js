@@ -264,6 +264,7 @@ var gymie = (function ($) {
 						text: "Eliminando este registro, tambien elimina todos sus records. Desea continuar?",
 						type: "warning",
 						showCancelButton: true,
+						cancelButtonText: "Cancelar",
 						showLoaderOnConfirm: true,
 						closeOnConfirm: false,
 						confirmButtonText: "Eliminando!",

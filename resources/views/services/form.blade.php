@@ -3,14 +3,14 @@
         <div class="col-sm-6">
             <div class="form-group">
                 {!! Form::label('name','Nombre del servicio') !!}
-                {!! Form::text('name',null,['class'=>'form-control', 'id' => 'name']) !!}
+                {!! Form::text('name',null,['class'=>'form-control', 'id' => 'name', 'required']) !!}
             </div>
         </div>
 
         <div class="col-sm-6">
             <div class="form-group">
                 {!! Form::label('description','Descripcion del servicio') !!}
-                {!! Form::text('description',null,['class'=>'form-control', 'id' => 'description']) !!}
+                {!! Form::text('description',null,['class'=>'form-control', 'id' => 'description', 'required']) !!}
             </div>
         </div>
     </div>
@@ -23,4 +23,3 @@
         </div>
     </div>
 </div>
-                            

@@ -13,7 +13,7 @@
 
                         {!! Form::Open(['url' => 'payments','id' => 'paymentsform']) !!}
 
-                        @include('payments.form',['submitButtonText' => 'Acceptar pago'])
+                        @include('payments.form',['submitButtonText' => 'Aceptar pago'])
 
                         {!! Form::Close() !!}
 

@@ -159,7 +159,7 @@
                         <li class="{{ Utilities::setActiveMenu('plans/create') }}"><a href="{{ action('PlansController@create') }}">Agregar plan</a></li>
                         @endpermission
                         @permission(['manage-gymie','manage-services','view-service'])
-                        <li class="{{ Utilities::setActiveMenu('plans/services/all') }}"><a href="{{ action('ServicesController@index') }}">Servicio de gimnacio</a>
+                        <li class="{{ Utilities::setActiveMenu('plans/services/all') }}"><a href="{{ action('ServicesController@index') }}">Servicio de gimnasio</a>
                         </li>
                         @endpermission
                         @permission(['manage-gymie','manage-services','add-service'])
