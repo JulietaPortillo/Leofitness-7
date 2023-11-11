@@ -23,7 +23,7 @@
                             <div class="panel-head">Ingrese los detalles del rol</div>
                         </div>
 
-                        {!! Form::Open(['url' => 'user/role','id' => 'rolesform','files'=>'true']) !!}
+                        {!! Form::Open(['url' => 'user/role','id' => 'rolesform','files'=>'true', 'onsubmit' => 'return validateForm()']) !!}
 
                         <div class="panel-body">
                             <div class="row">
@@ -90,5 +90,17 @@
         </div>
     </div>
     </div>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var display_name = document.getElementById("display_name").value;
+            var description = document.getElementById("description").value;
+            if (name == "" || display_name == "" || description == "") {
+                alert("Por favor complete todos los campos.");
+                return false;
+            }
+        }
+    </script>
 
 @stop
