@@ -64,7 +64,7 @@
     document.getElementById('submit-btn').addEventListener('click', function(event) {
         if (document.getElementById('invoice_id').value == '') {
             event.preventDefault();
-            alert('Please select an invoice');
+            alert('Por favor complete los campos.');
         }
     });
 </script>
